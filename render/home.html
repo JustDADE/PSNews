@@ -1,0 +1,28 @@
+<div id="recent" ng-controller="recentlyReleased">
+  <h2>Recently Released</h2>
+  <div class="figlist onewide">
+
+    <figure ng-repeat="game in recent">
+      <img src="images/games/{{ game.image }}w.png" alt="{{ game.title }}">
+      <figcaption>
+        <h3>{{ game.title }}</h3>
+        <h4>{{ game.releasetime | convertDate }} ago {{ game.releasetime }}</h4>
+      </figcaption>
+    </figure>
+
+  </div>
+</div>
+<div id="comingsoon" ng-controller="comingSoon">
+  <h2>Coming Soon</h2>
+  <div class="figlist onewide">
+
+    <figure ng-repeat="game in comingsoon">
+      <img src="images/games/{{ game.image }}w.png" alt="{{ game.title }}">
+      <figcaption>
+        <h3>{{ game.title }}</h3>
+        <h4>in {{ game.releasetime | convertDate }}</h4>
+      </figcaption>
+    </figure>
+
+  </div>
+</div>

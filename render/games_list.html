@@ -1,0 +1,18 @@
+<h2>Games List</h2>
+<form ng-submit="searchFor(searchValue)">
+  <input type="text" placeholder="Search for game..." class="search" ng-model="searchValue">
+</form>
+
+<div id="games-list">
+  <div class="figlist fourlist">
+
+    <figure ng-repeat="game in gamesList" ng-mouseover="showInfo = true" ng-mouseleave="showInfo = false">
+      <img src="images/games/{{ game.image }}w.png" alt="{{ game.title }}">
+      <figcaption ng-show="showInfo">
+        <h3>{{ game.title }}</h3>
+        <h4>in {{ game.releasetime | convertDate }}</h4>
+      </figcaption>
+    </figure>
+
+    </div>
+</div>
