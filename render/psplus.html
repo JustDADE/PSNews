@@ -1,0 +1,14 @@
+<div id="recent" ng-controller="psplus">
+  <h2>Month - Year</h2>
+  <div class="figlist onewide">
+
+    <figure ng-repeat="game in psplus">
+      <img src="images/games/{{ game.image }}w.png" alt="{{ game.title }}">
+      <figcaption>
+        <h3>{{ game.game | getName }}</h3>
+        <h4>{{ game.psplusdate }}</h4>
+      </figcaption>
+    </figure>
+
+  </div>
+</div>

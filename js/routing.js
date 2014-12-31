@@ -1,7 +1,12 @@
 psnApp.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
-    .state('Home', {
+    .state('Landing', {
       url: '',
+      templateUrl: 'render/home.html',
+      controller: 'homepage'
+    })
+    .state('Home', {
+      url: '/home',
       templateUrl: 'render/home.html',
       controller: 'homepage'
     })
@@ -17,8 +22,8 @@ psnApp.config(function($stateProvider, $urlRouterProvider) {
     })
     .state('IGC', {
       url: '/igc',
-      templateUrl: 'render/igc.html',
-      controller: 'homepage'
+      templateUrl: 'render/psplus.html',
+      controller: 'psplus'
     })
     .state('About', {
       url: '/about',

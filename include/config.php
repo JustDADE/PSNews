@@ -2,7 +2,7 @@
 
   $dbhost = 'localhost';
   $dbuser = 'root';
-  $dbpass = '10rtnm';
+  $dbpass = '';
   $dbtable = 'psn';
 
   $connx = mysqli_connect($dbhost, $dbuser, $dbpass, $dbtable) or die ('Error ' . mysqli_error($connx));

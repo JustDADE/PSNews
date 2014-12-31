@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test</title>
+    <meta charset="UTF-8">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="body"></div>
+    <script>
+      $.ajax({
+        url: '/js/game.json',
+        method: 'GET',
+        success: function(data) {
+
+          var id = data.id;
+          var title = data.name;
+          var games = data.links;
+
+          $('#body').append('<h1>'+title+'</h1>');
+
+          $.each(games, function(index, game) {
+            if (game.playable_platform.indexOf('PS4™') != -1) {
+
+              var price = 0;
+              var reward = game.skus[0].rewards[0];
+
+              if (typeof reward.bonus_display_price != 'undefined') {
+                price = reward.bonus_display_price;
+              } else {
+                price = reward.display_price;
+              }
+
+              console.log(game);
+
+              $('#body').append('<b>'+price+'</b>' + ' - ' + game.name + '<br>');
+
+            }
+          });
+        }
+      })
+    </script>
+  </body>
+</html>

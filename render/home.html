@@ -6,7 +6,7 @@
       <img src="images/games/{{ game.image }}w.png" alt="{{ game.title }}">
       <figcaption>
         <h3>{{ game.title }}</h3>
-        <h4>{{ game.releasetime | convertDate }} ago {{ game.releasetime }}</h4>
+        <h4>{{ game.releasetime | convertDate }} ago</h4>
       </figcaption>
     </figure>
 
@@ -25,4 +25,8 @@
     </figure>
 
   </div>
+</div>
+
+<div ng-repeat="g in links" style="font-size: 20px;">
+  <h3>{{ g.name }} {{ date }}</h3>
 </div>
